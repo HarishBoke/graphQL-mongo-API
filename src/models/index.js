@@ -1,5 +1,9 @@
-const {Podcast} = require("./podcast");
+const { CustomerEntity } = require("./customerEntity")
+const { CustomerEntityFields } = require("./customerEntityFields")
+const { Setting } = require("./setting")
 
 module.exports = {
-  Podcast
+  CustomerEntity,
+  CustomerEntityFields,
+  Setting
 }

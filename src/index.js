@@ -10,7 +10,7 @@ const server = new ApolloServer({
   typeDefs, 
   resolvers,
   context: { models },
-  introspection: true,
+  introspection: true,	
   playground: true,
 });
 
