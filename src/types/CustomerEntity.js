@@ -13,7 +13,7 @@ module.exports = gql`
   }
   
    type Query {
-    customerEntities: CustomerEntity
+    customerEntities: [CustomerEntity]
   }
 
   input customerFormField {

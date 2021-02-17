@@ -8,6 +8,21 @@ type fields {
   street:String
   streetNumber:String
 }
+
+type customerSettingKeyType {
+  index:Int
+  name:String
+}
+
+input customerSettingKeyInput {
+  index:Int!
+  name:String!
+}
+input customerSettingKeyInputUpdate {
+  index:Int
+  name:String
+}
+
 input fields2 {
   googleAddress: String
   postalCode: String
@@ -20,9 +35,9 @@ input fields2 {
     title: String!
     slug: String!
     value: String!
-    data: String!
-    customerEntity: String!
     type: String!
+    is_required:Boolean!
+    customerSettingKeyType:customerSettingKeyType
     dependentFields:fields
   }
 
@@ -30,20 +45,19 @@ input fields2 {
     title: String!
     slug: String!
     value: String!
-    data: String!
-    customerEntity: String!
     type: String!
+    is_required:Boolean
+    customerSettingKeyType:customerSettingKeyInput
     dependentFields:fields2
   }
 
   input UpdateCustomerEntityFieldsInput {
-    id: ID
     title: String
     slug: String
     value: String
-    data: String
-    customerEntity: String
     type: String
+    is_required:Boolean
+    customerSettingKeyType:customerSettingKeyInputUpdate
     dependentFields: fields2
     
   }
@@ -62,7 +76,7 @@ input fields2 {
 
 
   extend type Mutation {
-    createCustomerEntityFields(input: CreateCustomerEntityFieldsInput!): CustomerEntityFields!
+    createCustomerEntityFields(input: CreateCustomerEntityFieldsInput!): [CustomerEntityFields]!
     updateCustomerEntityFields(id: ID!, input: UpdateCustomerEntityFieldsInput!): CustomerEntityFields!
     deleteCustomerEntityFields(id: ID!): DeleteCustomerEntityFields!
     findCustomerEntityFields(customerEntity:String!):[CustomerEntityFields]!

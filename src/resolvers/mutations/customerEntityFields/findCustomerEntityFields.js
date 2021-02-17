@@ -3,7 +3,7 @@ const { ApolloError } = require("apollo-server");
 module.exports = async (_, {customerEntity}, {models}) => {
 
   try{
-    const searchedCustomerEntityFields = await models.CustomerEntityFields.find({customerEntity: customerEntity});
+    const searchedCustomerEntityFields = await models.CustomerEntityFields.find({type: customerEntity});
 
     return searchedCustomerEntityFields
   }

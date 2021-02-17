@@ -10,21 +10,25 @@ const customerEntityFieldsSchema = new Schema({
     type: String,
     trim: true
   },
-  type: {
-    type: String,
-    trim: true
-  },
   value: {
     type: String,
     trim: true
   },
-  data: {
+  type: {
     type: String,
     trim: true
   },
-  customerEntity: {
-    type: String,
-    trim: true
+  is_required: {
+    type: Boolean,
+  },
+  customerSettingKeyType: {
+    index:{
+      type: Number,
+    },
+    name:{
+      type: String,
+      trim: true
+    }
   },
   dependentFields: {
     type:Object
