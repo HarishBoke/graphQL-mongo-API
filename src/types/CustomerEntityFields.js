@@ -12,15 +12,18 @@ type fields {
 type customerSettingKeyType {
   index:Int
   name:String
+  data:[String]
 }
 
 input customerSettingKeyInput {
   index:Int!
   name:String!
+  data:[String]
 }
 input customerSettingKeyInputUpdate {
   index:Int
   name:String
+  data:[String]
 }
 
 input fields2 {
@@ -45,6 +48,7 @@ input fields2 {
     title: String!
     slug: String!
     value: String!
+    data: [String]
     type: String!
     is_required:Boolean
     customerSettingKeyType:customerSettingKeyInput
@@ -55,6 +59,7 @@ input fields2 {
     title: String
     slug: String
     value: String
+    
     type: String
     is_required:Boolean
     customerSettingKeyType:customerSettingKeyInputUpdate
@@ -76,7 +81,7 @@ input fields2 {
 
 
   extend type Mutation {
-    createCustomerEntityFields(input: CreateCustomerEntityFieldsInput!): [CustomerEntityFields]!
+    createCustomerEntityFields(input: CreateCustomerEntityFieldsInput!): CustomerEntityFields!
     updateCustomerEntityFields(id: ID!, input: UpdateCustomerEntityFieldsInput!): CustomerEntityFields!
     deleteCustomerEntityFields(id: ID!): DeleteCustomerEntityFields!
     findCustomerEntityFields(customerEntity:String!):[CustomerEntityFields]!
