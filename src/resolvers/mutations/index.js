@@ -9,6 +9,11 @@ const findCustomerEntityFields = require("./customerEntityFields/findCustomerEnt
 // setting
 const createSetting = require("./setting/createSetting");
 const updateSetting = require("./setting/updateSetting")
+
+// services
+const createServices = require("./services/createServices")
+const updateService = require("./services/updateService")
+const deleteService = require("./services/deleteService")
 module.exports = {
   createCustomerEntity,
 
@@ -21,4 +26,10 @@ module.exports = {
   // setting
   createSetting,
   updateSetting,
+
+  // Services
+  createServices,
+  updateService,
+  deleteService
+
 }

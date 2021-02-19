@@ -9,7 +9,7 @@ module.exports = gql`
   }
  
   type GetCustomerFormField {
-    customerEntityValues : CustomerEntity
+    customerEntityValues : [CustomerEntity]
   }
   
    type Query {
@@ -23,7 +23,7 @@ module.exports = gql`
   }
 
    input CreateCustomerEntityInput {
-    customerEntityValues : customerFormField
+    customerEntityValues : [customerFormField]
   }
 
    type Mutation {

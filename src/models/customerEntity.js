@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const customerEntitySchema = new Schema({
-  customerEntityValues :{
+  customerEntityValues :[{
     slug: {
     type: String,
     trim: true
@@ -11,7 +11,7 @@ const customerEntitySchema = new Schema({
     type: String,
     trim: true
   }
-  }
+  }]
 });
 
 const CustomerEntity = mongoose.model("customerEntity", customerEntitySchema);

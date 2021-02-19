@@ -18,6 +18,7 @@ const customerEntityFieldsSchema = new Schema({
     type: String,
     trim: true
   },
+ 
   is_required: {
     type: Boolean,
   },
@@ -28,7 +29,10 @@ const customerEntityFieldsSchema = new Schema({
     name:{
       type: String,
       trim: true
-    }
+    },
+    data: {
+      type:[String]
+     },
   },
   dependentFields: {
     type:Object
