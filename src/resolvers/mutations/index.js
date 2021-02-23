@@ -14,6 +14,11 @@ const updateSetting = require("./setting/updateSetting")
 const createServices = require("./services/createServices")
 const updateService = require("./services/updateService")
 const deleteService = require("./services/deleteService")
+
+// Product
+const createProduct = require("./product/createProduct")
+const updateProduct = require("./product/updateProduct")
+const deleteProduct = require("./product/deleteProduct")
 module.exports = {
   createCustomerEntity,
 
@@ -30,6 +35,11 @@ module.exports = {
   // Services
   createServices,
   updateService,
-  deleteService
+  deleteService,
+
+  // Product
+  createProduct,
+  deleteProduct,
+  updateProduct
 
 }
